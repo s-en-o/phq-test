@@ -1,9 +1,5 @@
-import { Component } from '@angular/core'
-
-interface Bookmark {
-    name: string
-    url: string
-}
+import { Component, inject } from '@angular/core'
+import { BookmarkService } from '../bookmark.service'
 
 @Component({
     selector: 'app-submission',
@@ -13,9 +9,16 @@ interface Bookmark {
     styleUrl: './submission.component.scss',
 })
 export class SubmissionComponent {
-    bookmarks: Bookmark[] = []
+    BookmarkService = inject(BookmarkService)
 
-    handleAdd() {
+    handleAdd(event: Event) {
+        event.preventDefault()
+
         console.log('Adding bookmark...')
+
+        this.BookmarkService.handleAddBookmark({
+            name: 'test',
+            url: 'https://test.com',
+        })
     }
 }

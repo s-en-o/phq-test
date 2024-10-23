@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
+import { BookmarkService } from '../bookmark.service'
 
 interface Bookmark {
     name: string
@@ -13,17 +14,18 @@ interface Bookmark {
     styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+    BookmarkService = inject(BookmarkService)
     // List of bookmarks
-    bookmarks: Bookmark[] = [
-        { name: 'Google', url: 'https://www.google.com' },
-        { name: 'YouTube', url: 'https://www.youtube.com' },
-        { name: 'Wikipedia', url: 'https://www.wikipedia.org' },
-    ]
+    bookmarks: Bookmark[] = []
 
     // Handle deleting bookmark
     handleDeleteBookmark(bookmarkName: string) {
         this.bookmarks = this.bookmarks.filter(
             (bookmark) => bookmark.name !== bookmarkName
         )
+    }
+
+    constructor() {
+        this.bookmarks = this.BookmarkService.handleGetAllBookmarks()
     }
 }
