@@ -13,9 +13,17 @@ interface Bookmark {
     styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+    // List of bookmarks
     bookmarks: Bookmark[] = [
         { name: 'Google', url: 'https://www.google.com' },
         { name: 'YouTube', url: 'https://www.youtube.com' },
         { name: 'Wikipedia', url: 'https://www.wikipedia.org' },
     ]
+
+    // Handle deleting bookmark
+    handleDeleteBookmark(bookmarkName: string) {
+        this.bookmarks = this.bookmarks.filter(
+            (bookmark) => bookmark.name !== bookmarkName
+        )
+    }
 }
