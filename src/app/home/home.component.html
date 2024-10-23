@@ -1,4 +1,8 @@
-<label for="name">Link title</label>
-<input type="text" id="name" placeholder="Google" />
-<label for="url">URL</label>
-<input type="text" id="url" placeholder="https://google.com" />
+<h2>Overview page</h2>
+<ul>
+    @for (bookmark of bookmarks; track bookmark.name) {
+    <li>
+        <a [href]="bookmark.url">{{ bookmark.name }}</a>
+    </li>
+    }
+</ul>

@@ -1,3 +1,8 @@
 <main>
-    <app-home></app-home>
+    <a [routerLink]="['/']">Overview</a>
+    <a [routerLink]="['/submission']">Add a link</a>
+
+    <section class="mainContent">
+        <router-outlet></router-outlet>
+    </section>
 </main>
