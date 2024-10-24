@@ -21,7 +21,9 @@
 
 <p>
     {{ pageLength }} pages <br />
-    Page {{ currentPage }}
+    {{ currentPage !== 1 ? currentPage - 1 : '' }}
+    <b>{{ currentPage }}</b>
+    {{ currentPage !== pageLength ? currentPage + 1 : '' }}
 </p>
 
 <button (click)="nextPage()">next ></button>
