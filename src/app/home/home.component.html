@@ -1,5 +1,10 @@
 <h2>Overview page</h2>
-<ul>
+
+<h3 *ngIf="!bookmarks.length">
+    No bookmarks, <a [routerLink]="['/submission']">Add one</a>
+</h3>
+
+<ul *ngIf="bookmarks.length">
     @for (bookmark of bookmarks; track bookmark.name;) {
     <li>
         <a [href]="bookmark.url">{{ bookmark.name }}</a>

@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core'
 import { BookmarkService } from '../bookmark.service'
+import { CommonModule } from '@angular/common'
+import { RouterLink, RouterModule } from '@angular/router'
 
 interface Bookmark {
     name: string
@@ -9,7 +11,7 @@ interface Bookmark {
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [],
+    imports: [CommonModule, RouterLink, RouterModule],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
 })

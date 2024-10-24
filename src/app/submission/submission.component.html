@@ -1,7 +1,20 @@
-<form action="">
+<form [formGroup]="submissionForm" (ngSubmit)="handleSubmit($event)">
+    <small *ngIf="validation.name.isVisible && validation.name.message">{{
+        validation.name.message
+    }}</small>
     <label for="name">Link title</label>
-    <input type="text" id="name" placeholder="Google" />
+    <input type="text" id="name" placeholder="Google" formControlName="name" />
+
+    <small *ngIf="validation.url.isVisible && validation.url.message">{{
+        validation.url.message
+    }}</small>
     <label for="url">URL</label>
-    <input type="text" id="url" placeholder="https://google.com" />
-    <button type="submit" (click)="handleAdd($event)">Add link</button>
+    <input
+        type="text"
+        id="url"
+        placeholder="https://google.com"
+        formControlName="url"
+    />
+
+    <button type="submit">Add link</button>
 </form>

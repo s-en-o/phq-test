@@ -10,11 +10,7 @@ interface Bookmark {
 })
 export class BookmarkService {
     // List of bookmarks
-    bookmarks: Bookmark[] = [
-        { name: 'Google', url: 'https://www.google.com' },
-        { name: 'YouTube', url: 'https://www.youtube.com' },
-        { name: 'Wikipedia', url: 'https://www.wikipedia.org' },
-    ]
+    bookmarks: Bookmark[] = []
 
     // Get all bookmarks
     handleGetAllBookmarks(): Bookmark[] {
@@ -24,6 +20,8 @@ export class BookmarkService {
     // Adding bookmark
     handleAddBookmark(bookmark: Bookmark) {
         this.bookmarks.push(bookmark)
+
+        // localStorage.setItem('bookmarks', this.bookmarks)
 
         console.log(bookmark)
     }
