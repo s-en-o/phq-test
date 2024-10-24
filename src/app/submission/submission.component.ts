@@ -98,10 +98,9 @@ export class SubmissionComponent {
     // Handle adding
     handleAdd(name: string, url: string) {
         console.log(name, url)
-
-        // this.BookmarkService.handleAddBookmark({
-        //     name,
-        //     url,
-        // })
+        this.BookmarkService.handleAddBookmark({
+            name,
+            url,
+        })
     }
 }
