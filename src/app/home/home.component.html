@@ -4,8 +4,10 @@
     No bookmarks, <a [routerLink]="['/submission']">Add one</a>
 </h3>
 
+<p>{{ bookmarks.length }}</p>
+
 <ul *ngIf="bookmarks.length">
-    @for (bookmark of bookmarks; track bookmark.name;) {
+    @for (bookmark of items; let idx = $index; track idx;) {
     <li>
         <a [href]="bookmark.url">{{ bookmark.name }}</a>
 
@@ -14,3 +16,12 @@
     </li>
     }
 </ul>
+
+<button (click)="prevPage()">< prev</button>
+
+<p>
+    {{ pageLength }} pages <br />
+    Page {{ currentPage }}
+</p>
+
+<button (click)="nextPage()">next ></button>
