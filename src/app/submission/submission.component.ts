@@ -51,8 +51,10 @@ export class SubmissionComponent {
             return false
         }
 
-        // Making sure url protocol is http or https
-        const urlRegex = new RegExp('^(http|https)://', 'i')
+        // Making sure url is valid
+        const urlRegex = new RegExp(
+            /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm
+        )
         const result = urlRegex.test(url)
 
         if (!result) {
@@ -62,10 +64,10 @@ export class SubmissionComponent {
         }
 
         // TODO: check if valid url and exist
-        if (result) {
-            const test = false
-            return false
-        }
+        // if (result) {
+        //     const test = false
+        //     return false
+        // }
 
         return true
     }
