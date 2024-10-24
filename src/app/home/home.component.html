@@ -11,7 +11,7 @@
     <li>
         <a [href]="bookmark.url">{{ bookmark.name }}</a>
 
-        <button>Edit</button>
+        <button [routerLink]="['/edit', bookmark.id]">Edit</button>
         <button (click)="handleDeleteBookmark(bookmark.name)">Delete</button>
     </li>
     }
@@ -23,7 +23,7 @@
     {{ pageLength }} pages <br />
     {{ currentPage !== 1 ? currentPage - 1 : '' }}
     <b>{{ currentPage }}</b>
-    {{ currentPage !== pageLength ? currentPage + 1 : '' }}
+    {{ currentPage !== pageLength && pageLength > 1 ? currentPage + 1 : '' }}
 </p>
 
 <button (click)="nextPage()">next ></button>

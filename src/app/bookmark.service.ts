@@ -1,293 +1,12 @@
 import { Injectable } from '@angular/core'
-
-interface Bookmark {
-    name: string
-    url: string
-}
+import { Bookmark } from './bookmark'
 
 @Injectable({
     providedIn: 'root',
 })
 export class BookmarkService {
     // List of bookmarks
-    bookmarks: Bookmark[] = [
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google1',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google2',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google3',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google4',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google5',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google6',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-        {
-            name: 'Google7',
-            url: 'https://www.google.com/',
-        },
-    ]
+    bookmarks: Bookmark[] = []
 
     // Get all bookmarks
     handleGetAllBookmarks(): Bookmark[] {
@@ -300,7 +19,7 @@ export class BookmarkService {
 
         // localStorage.setItem('bookmarks', this.bookmarks)
 
-        console.log(bookmark)
+        // console.log(bookmark)
     }
 
     // Handle deleting bookmark
@@ -308,5 +27,23 @@ export class BookmarkService {
         this.bookmarks = this.bookmarks.filter(
             (bookmark) => bookmark.name !== bookmarkName
         )
+    }
+
+    // Handle edit bookmark
+    handleEditBookmark(id: string) {
+        return this.bookmarks.find((bookmark) => bookmark.id === id)
+    }
+
+    // Handle updating bookmark
+    handleUpdateBookmark(payload: { id: string; name: string; url: string }) {
+        const item = this.bookmarks.find(
+            (bookmark) => bookmark.id === payload.id
+        )
+
+        // TODO: No bookmark found
+        if (!item) return
+
+        item.name = payload.name
+        item.url = payload.url
     }
 }

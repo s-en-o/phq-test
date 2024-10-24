@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common'
 import { RouterLink, RouterModule } from '@angular/router'
 
 interface Bookmark {
+    id: string
     name: string
     url: string
 }

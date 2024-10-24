@@ -1,0 +1,12 @@
+<form
+    [formGroup]="updateForm"
+    (ngSubmit)="handleSubmit($event)"
+    *ngIf="bookmark"
+>
+    <label for="name">Title</label>
+    <input type="text" id="name" formControlName="name" />
+    <label for="url">URL</label>
+    <input type="text" id="url" formControlName="url" />
+
+    <button type="submit">Save changes</button>
+</form>

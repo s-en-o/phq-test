@@ -7,6 +7,7 @@ import {
     Validators,
 } from '@angular/forms'
 import { CommonModule } from '@angular/common'
+import { v4 as uuidv4 } from 'uuid'
 
 @Component({
     selector: 'app-submission',
@@ -97,8 +98,9 @@ export class SubmissionComponent {
 
     // Handle adding
     handleAdd(name: string, url: string) {
-        console.log(name, url)
+        const id = uuidv4()
         this.BookmarkService.handleAddBookmark({
+            id,
             name,
             url,
         })
